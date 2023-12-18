@@ -1,38 +1,51 @@
-import { Redirect, Route } from 'react-router-dom';
+import { Redirect, Route } from "react-router-dom";
 import {
   IonApp,
+  IonFab,
+  IonFabButton,
+  IonFabList,
   IonIcon,
   IonLabel,
   IonRouterOutlet,
   IonTabBar,
   IonTabButton,
   IonTabs,
-  setupIonicReact
-} from '@ionic/react';
-import { IonReactRouter } from '@ionic/react-router';
-import { ellipse, square, triangle } from 'ionicons/icons';
-import Tab1 from './pages/Tab1';
-import Tab2 from './pages/Tab2';
-import Tab3 from './pages/Tab3';
+  setupIonicReact,
+} from "@ionic/react";
+import { IonReactRouter } from "@ionic/react-router";
+import {
+  add,
+  colorPalette,
+  document,
+  globe,
+  home,
+  person,
+  pieChart,
+  swapHorizontal,
+} from "ionicons/icons";
+import Home from "./pages/Home";
+import Transaction from "./pages/Transaction";
+import Budget from "./pages/Budget";
+import Profile from "./pages/Profile";
 
 /* Core CSS required for Ionic components to work properly */
-import '@ionic/react/css/core.css';
+import "@ionic/react/css/core.css";
 
 /* Basic CSS for apps built with Ionic */
-import '@ionic/react/css/normalize.css';
-import '@ionic/react/css/structure.css';
-import '@ionic/react/css/typography.css';
+import "@ionic/react/css/normalize.css";
+import "@ionic/react/css/structure.css";
+import "@ionic/react/css/typography.css";
 
 /* Optional CSS utils that can be commented out */
-import '@ionic/react/css/padding.css';
-import '@ionic/react/css/float-elements.css';
-import '@ionic/react/css/text-alignment.css';
-import '@ionic/react/css/text-transformation.css';
-import '@ionic/react/css/flex-utils.css';
-import '@ionic/react/css/display.css';
+import "@ionic/react/css/padding.css";
+import "@ionic/react/css/float-elements.css";
+import "@ionic/react/css/text-alignment.css";
+import "@ionic/react/css/text-transformation.css";
+import "@ionic/react/css/flex-utils.css";
+import "@ionic/react/css/display.css";
 
 /* Theme variables */
-import './theme/variables.css';
+import "./theme/variables.css";
 
 setupIonicReact();
 
@@ -41,34 +54,68 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
-          <Route exact path="/tab1">
-            <Tab1 />
+          <Route exact path="/home">
+            <Home />
           </Route>
-          <Route exact path="/tab2">
-            <Tab2 />
+          <Route exact path="/transaction">
+            <Transaction />
           </Route>
-          <Route path="/tab3">
-            <Tab3 />
+          <Route exact path="/budget">
+            <Budget />
+          </Route>
+          <Route path="/profile">
+            <Profile />
           </Route>
           <Route exact path="/">
-            <Redirect to="/tab1" />
+            <Redirect to="/home" />
           </Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
-          <IonTabButton tab="tab1" href="/tab1">
-            <IonIcon aria-hidden="true" icon={triangle} />
-            <IonLabel>Tab 1</IonLabel>
+          <IonTabButton tab="home" href="/home">
+            <IonIcon aria-hidden="true" icon={home} />
+            <IonLabel>Home</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab2" href="/tab2">
-            <IonIcon aria-hidden="true" icon={ellipse} />
-            <IonLabel>Tab 2</IonLabel>
+          <IonTabButton tab="transaction" href="/transaction">
+            <IonIcon aria-hidden="true" icon={swapHorizontal} />
+            <IonLabel>Transaction</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab3" href="/tab3">
-            <IonIcon aria-hidden="true" icon={square} />
-            <IonLabel>Tab 3</IonLabel>
+          <IonTabButton tab="" disabled />
+          <IonTabButton tab="budget" href="/budget">
+            <IonIcon aria-hidden="true" icon={pieChart} />
+            <IonLabel>Budget</IonLabel>
+          </IonTabButton>
+          <IonTabButton tab="profile" href="/profile">
+            <IonIcon aria-hidden="true" icon={person} />
+            <IonLabel>Profile</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>
+      <IonFab slot="fixed" vertical="bottom" horizontal="center">
+        <IonFabButton>
+          <IonIcon icon={add} />
+        </IonFabButton>
+        <IonFabList side="top">
+          <IonFabButton
+            style={{
+              transform: "translate(-100%, 0%)",
+            }}
+            color="success"
+          >
+            <IonIcon icon={document} />
+          </IonFabButton>
+          <IonFabButton color="tertiary">
+            <IonIcon icon={colorPalette} />
+          </IonFabButton>
+          <IonFabButton
+            style={{
+              transform: "translate(100%, 250%)",
+            }}
+            color="danger"
+          >
+            <IonIcon icon={globe} />
+          </IonFabButton>
+        </IonFabList>
+      </IonFab>
     </IonReactRouter>
   </IonApp>
 );

@@ -5,9 +5,10 @@ import {
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
-import ExploreContainer from "../components/ExploreContainer";
 
-const Budget: React.FC = () => {
+import ExploreContainer from "~/components/ExploreContainer";
+
+export const Budget: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
@@ -26,5 +27,3 @@ const Budget: React.FC = () => {
     </IonPage>
   );
 };
-
-export default Budget;

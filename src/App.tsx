@@ -23,10 +23,6 @@ import {
   pieChart,
   swapHorizontal,
 } from "ionicons/icons";
-import Home from "./pages/Home";
-import Transaction from "./pages/Transaction";
-import Budget from "./pages/Budget";
-import Profile from "./pages/Profile";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -44,8 +40,13 @@ import "@ionic/react/css/text-transformation.css";
 import "@ionic/react/css/flex-utils.css";
 import "@ionic/react/css/display.css";
 
+import { Budget } from "~/pages/Budget";
+import { Home } from "~/pages/Home";
+import { Profile } from "~/pages/Profile";
+import { Transaction } from "~/pages/Transaction";
+
 /* Theme variables */
-import "./theme/variables.css";
+import "~/theme/variables.css";
 
 setupIonicReact();
 
@@ -63,10 +64,10 @@ const App: React.FC = () => (
           <Route exact path="/budget">
             <Budget />
           </Route>
-          <Route path="/profile">
+          <Route exact path="/profile">
             <Profile />
           </Route>
-          <Route exact path="/">
+          <Route>
             <Redirect to="/home" />
           </Route>
         </IonRouterOutlet>

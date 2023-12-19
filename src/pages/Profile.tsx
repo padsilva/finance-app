@@ -5,9 +5,10 @@ import {
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
-import ExploreContainer from "../components/ExploreContainer";
 
-const Profile: React.FC = () => {
+import ExploreContainer from "~/components/ExploreContainer";
+
+export const Profile: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
@@ -26,5 +27,3 @@ const Profile: React.FC = () => {
     </IonPage>
   );
 };
-
-export default Profile;

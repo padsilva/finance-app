@@ -5,9 +5,10 @@ import {
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
-import ExploreContainer from "../components/ExploreContainer";
 
-const Home: React.FC = () => {
+import ExploreContainer from "~/components/ExploreContainer";
+
+export const Home: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
@@ -26,5 +27,3 @@ const Home: React.FC = () => {
     </IonPage>
   );
 };
-
-export default Home;

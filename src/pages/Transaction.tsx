@@ -5,9 +5,10 @@ import {
   IonTitle,
   IonToolbar,
 } from "@ionic/react";
-import ExploreContainer from "../components/ExploreContainer";
 
-const Transaction: React.FC = () => {
+import ExploreContainer from "~/components/ExploreContainer";
+
+export const Transaction: React.FC = () => {
   return (
     <IonPage>
       <IonHeader>
@@ -26,5 +27,3 @@ const Transaction: React.FC = () => {
     </IonPage>
   );
 };
-
-export default Transaction;

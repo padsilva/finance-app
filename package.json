@@ -9,7 +9,9 @@
     "preview": "vite preview",
     "test.e2e": "cypress run",
     "test.unit": "vitest",
-    "lint": "eslint . --fix"
+    "lint": "eslint . --fix",
+    "precommit": "yarn lint && yarn test.unit",
+    "postinstall": "husky install"
   },
   "dependencies": {
     "@capacitor/app": "5.0.6",
@@ -42,6 +44,7 @@
     "cypress": "^13.5.0",
     "eslint": "^8.56.0",
     "eslint-plugin-react": "^7.32.2",
+    "husky": "^8.0.3",
     "jsdom": "^22.1.0",
     "terser": "^5.4.0",
     "typescript": "^5.3.3",

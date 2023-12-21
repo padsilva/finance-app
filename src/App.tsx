@@ -1,4 +1,5 @@
-import { Redirect, Route } from "react-router-dom";
+import React from "react";
+
 import {
   IonApp,
   IonFab,
@@ -14,15 +15,16 @@ import {
 } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 import {
-  add,
-  colorPalette,
-  document,
-  globe,
+  addOutline,
+  ellipsisHorizontalOutline,
   home,
   person,
   pieChart,
+  remove,
+  shuffleOutline,
   swapHorizontal,
 } from "ionicons/icons";
+import { Redirect, Route } from "react-router-dom";
 
 /* Core CSS required for Ionic components to work properly */
 import "@ionic/react/css/core.css";
@@ -33,12 +35,12 @@ import "@ionic/react/css/structure.css";
 import "@ionic/react/css/typography.css";
 
 /* Optional CSS utils that can be commented out */
-import "@ionic/react/css/padding.css";
+import "@ionic/react/css/display.css";
+import "@ionic/react/css/flex-utils.css";
 import "@ionic/react/css/float-elements.css";
+import "@ionic/react/css/padding.css";
 import "@ionic/react/css/text-alignment.css";
 import "@ionic/react/css/text-transformation.css";
-import "@ionic/react/css/flex-utils.css";
-import "@ionic/react/css/display.css";
 
 import { Budget } from "~/pages/Budget";
 import { Home } from "~/pages/Home";
@@ -46,7 +48,7 @@ import { Profile } from "~/pages/Profile";
 import { Transaction } from "~/pages/Transaction";
 
 /* Theme variables */
-import "~/theme/variables.css";
+import "~/styles/variables.css";
 
 setupIonicReact();
 
@@ -93,27 +95,37 @@ const App: React.FC = () => (
       </IonTabs>
       <IonFab slot="fixed" vertical="bottom" horizontal="center">
         <IonFabButton>
-          <IonIcon icon={add} />
+          <IonIcon icon={ellipsisHorizontalOutline} size="large" />
         </IonFabButton>
         <IonFabList side="top">
           <IonFabButton
+            color="success"
             style={{
               transform: "translate(-100%, 0%)",
+              height: "56px",
+              width: "56px",
             }}
-            color="success"
           >
-            <IonIcon icon={document} />
-          </IonFabButton>
-          <IonFabButton color="tertiary">
-            <IonIcon icon={colorPalette} />
+            <IonIcon icon={addOutline} size="large" />
           </IonFabButton>
           <IonFabButton
+            color="tertiary"
             style={{
-              transform: "translate(100%, 250%)",
+              height: "56px",
+              width: "56px",
             }}
-            color="danger"
           >
-            <IonIcon icon={globe} />
+            <IonIcon icon={shuffleOutline} size="large" />
+          </IonFabButton>
+          <IonFabButton
+            color="danger"
+            style={{
+              transform: "translate(100%, 238%)",
+              height: "56px",
+              width: "56px",
+            }}
+          >
+            <IonIcon icon={remove} size="large" />
           </IonFabButton>
         </IonFabList>
       </IonFab>

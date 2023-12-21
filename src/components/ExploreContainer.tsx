@@ -1,10 +1,12 @@
-import "~/theme/ExploreContainer.css";
+import React from "react";
+
+import "~/styles/ExploreContainer.css";
 
 interface ContainerProps {
   name: string;
 }
 
-const ExploreContainer: React.FC<ContainerProps> = ({ name }) => (
+export const ExploreContainer: React.FC<ContainerProps> = ({ name }) => (
   <div className="container">
     <strong>{name}</strong>
     <p>
@@ -19,5 +21,3 @@ const ExploreContainer: React.FC<ContainerProps> = ({ name }) => (
     </p>
   </div>
 );
-
-export default ExploreContainer;

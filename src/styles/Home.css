@@ -1,0 +1,15 @@
+.navbar ion-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+}
+
+.custom-icon {
+  height: 24px;
+  width: 24px;
+}
+
+.custom-ion-item {
+  --inner-border-width: 0px;
+}

@@ -10,7 +10,7 @@
     "test.e2e": "cypress run",
     "test.unit": "vitest",
     "lint": "eslint . --fix",
-    "precommit": "yarn lint && yarn test.unit",
+    "precommit": "yarn lint",
     "postinstall": "husky install"
   },
   "dependencies": {

@@ -42,10 +42,10 @@ import "@ionic/react/css/padding.css";
 import "@ionic/react/css/text-alignment.css";
 import "@ionic/react/css/text-transformation.css";
 
-import { Budget } from "~/pages/Budget";
-import { Home } from "~/pages/Home";
-import { Profile } from "~/pages/Profile";
-import { Transaction } from "~/pages/Transaction";
+import { Budget } from "~/pages/budget";
+import { Home } from "~/pages/home";
+import { Profile } from "~/pages/profile";
+import { Transaction } from "~/pages/transaction";
 
 /* Theme variables */
 import "~/styles/variables.css";
@@ -53,7 +53,7 @@ import "~/styles/variables.css";
 setupIonicReact();
 
 const App: React.FC = () => (
-  <IonApp>
+  <IonApp data-test="app">
     <IonReactRouter>
       <IonTabs>
         <IonRouterOutlet>
